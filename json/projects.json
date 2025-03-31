@@ -1,0 +1,8 @@
+[
+    {
+        "title": "Repositorio Github de Ransomware",
+        "description": "Más de 1000 archivos pefile de tipo Ransomware. El objetivo de este repositorio es el de proporcionar una base de datos que contenga todos estos archivos para que el analista revise la información obtenida antes, durante y después de ejecutar el archivo, investigando el comportamiento del sistema.",
+        "tags": ["Repositorio", "Malware", "Ransomware", "Archivos_maliciosos", "Análisis", "Investigación"],
+        "link": "https://github.com/racrproject/ransomware-samples"
+    }
+]
