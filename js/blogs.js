@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchBlogs() {
         try {
-            const response = await fetch('/json/blogs.json');
+            const response = await fetch('/miportafolio/json/blogs.json');
             const blogs = await response.json();
             displayBlogs(blogs);
 

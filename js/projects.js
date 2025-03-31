@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     async function fetchProjects() {
       try {
-        const response = await fetch('/json/projects.json');
+        const response = await fetch('/miportafolio/json/projects.json');
         const projects = await response.json();
         
         // Muestra todos los proyectos inicialmente
@@ -68,7 +68,7 @@ copyButtons.forEach(button => {
         // Feedback visual (opcional)
         button.innerHTML = '¡Copiado!';
         setTimeout(() => {
-            button.innerHTML = '<img src="/images/icons/copy.svg" alt="Copiar" class="copy-icon">';
+            button.innerHTML = '<img src="/miportafolio/images/icons/copy.svg" alt="Copiar" class="copy-icon">';
         }, 2000);
     });
 });
