@@ -1,0 +1,20 @@
+# Ignorar configuraciones de Visual Studio Code
+.vscode/
+
+# Ignorar archivos de log y temporales
+*.log
+*.tmp
+
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar dependencias (si en el futuro usas Node.js o algún framework)
+node_modules/
+
+# Ignorar compilaciones y carpetas de distribución
+dist/
+build/
+
+# Ignorar variables de entorno (si necesitas agregar configuraciones sensibles en el futuro)
+.env
