@@ -128,8 +128,8 @@ nav {
         font-size: 2rem;
         color: #bd0d0d;
         cursor: pointer;
-        top: 5px;
-        right: 10px;
+        top: 10px;
+        right: 5px;
         font-size: 1.5rem;
         z-index: 10;
         /* Asegúrate de que esté por encima del contenido */
