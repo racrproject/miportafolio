@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const subject = `Nuevo mensaje de contacto de ${name}`;
         const body = `Nombre: ${name}\n\n Email: ${email}\n\n Mensaje:${message}`;
-        const mailtoLink = `mailto:rominaarlleycatro@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoLink = `mailto:rominaarlleycastro@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
         window.location.href = mailtoLink;
     });
