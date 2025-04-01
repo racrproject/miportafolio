@@ -15,27 +15,3 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.classList.remove("active");
   });
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("pdf-modal");
-  const modalContent = document.querySelector(".modal-content");
-  const previewBtn = document.getElementById("preview-btn");
-  const closeBtn = document.querySelector(".close-btn");
-
-  // Abrir el modal
-  previewBtn.addEventListener("click", () => {
-    modal.style.display = "block";
-  });
-
-  // Cerrar el modal al hacer clic en la "X"
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  // Cerrar el modal al hacer clic fuera del contenido
-  modal.addEventListener("click", (e) => {
-    if (!modalContent.contains(e.target)) {
-      modal.style.display = "none";
-    }
-  });
-});
