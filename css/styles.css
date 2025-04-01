@@ -152,7 +152,7 @@ nav {
 .hamburguesa.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -8.5px) scale(1.1);
 }
-}
+
 
 /*Header*/
 header {
