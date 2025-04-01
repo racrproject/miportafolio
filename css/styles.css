@@ -700,8 +700,8 @@ strong {
 
     .close-btn {
         position: absolute;
-        top: 5px;
-        right: 10px;
+        top: -5px;
+        right: 15px;
         font-size: 1.5rem;
         z-index: 10;
     }
