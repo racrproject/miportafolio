@@ -397,7 +397,7 @@ header {
 
 /*Content about page*/
 .content {
-    margin: 50px 350 0 350;
+    margin: 50px 350px 0 350px;
     padding: auto;
 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -649,8 +649,7 @@ strong {
 
 @media (max-width: 768px) {
     .content {
-        margin: auto;
-        padding: auto;
+        margin: 90%;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         justify-items: center;
     }
