@@ -17,9 +17,6 @@
     font-family: var(--font);
 }
 
-html {
-    font-size: clamp(14px, 1.2vw, 18px);
-}
 
 h2 {
     color: var(--color-font);
@@ -29,7 +26,7 @@ h2 {
 body {
     background-color: var(--background);
     line-height: 1.6;
-    margin: 0 10px;
+    margin: 0 10 0 10;
 }
 
 /* Estilos generales */
@@ -365,7 +362,7 @@ header {
     .present {
         margin: 0;
         padding: 0;
-        font-size: clamp(1.4rem, 2.5vw, 1.7rem);
+        font-size: 1.7rem;
         color: #ffffff;
         margin-bottom: 1rem;
     }
@@ -397,6 +394,7 @@ header {
 /*Content about page*/
 .content {
     margin: 50px 350 0 350;
+    padding: auto;
 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     align-items: center;
@@ -592,9 +590,10 @@ strong {
 }
 
 .s-skill {
-    display: flex;
-    justify-content: center;
+
+    justify-items: center;
     align-items: center;
+    align-content: center;
 }
 
 .tecnical-skill {
@@ -605,7 +604,7 @@ strong {
 }
 
 .skill-div {
-    padding: 20px;
+    padding: 20;
 }
 
 /*Cursos y certificaciones*/
@@ -629,7 +628,7 @@ strong {
 
 /*Idiomas*/
 .languages {
-    margin: 30px 70px 90px;
+    margin: 30px 70 90;
     padding: auto;
     color: #fff;
 }
@@ -647,8 +646,9 @@ strong {
 @media (max-width: 768px) {
     .content {
         margin: auto;
-        padding: 1rem;
+        padding: auto;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        justify-items: center;
     }
 
     .about-content {
@@ -733,7 +733,8 @@ strong {
 
     .sec-exp {
         margin: auto;
-
+        padding-left: 20px;
+        padding-right: 15px;
         align-content: center;
 
     }
@@ -823,8 +824,8 @@ strong {
         margin: auto;
         padding: 0 20px;
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
+        flex-wrap: nowrap;
+        flex-direction: wrap;
         gap: 30px;
 
     }
