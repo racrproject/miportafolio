@@ -125,8 +125,8 @@ nav {
     .close-menu {
         position: absolute;
         font-size: 2rem;
-        top: 0;
-        right: 30px;
+        top: -5;
+        right: 10px;
         cursor: pointer;
         color: #a40404;
         font-size: 1.5rem;
