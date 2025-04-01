@@ -1128,6 +1128,8 @@ footer {
 
 }
 
+
+
 @media (max-width: 768px) {
     .contact-form {
         padding: 2rem 1rem;
@@ -1182,6 +1184,10 @@ footer {
         color: #666;
         font-size: 0.9rem;
         margin-bottom: 0.5rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
     }
 
 }
