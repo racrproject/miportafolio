@@ -123,13 +123,13 @@ nav {
     }
 
     .close-menu {
+        display: none;
         position: absolute;
-        font-size: 2rem;
+        top: -68px;
+        right: 34px;
+        font-size: 3rem;
+        color: #bd0d0d00;
         cursor: pointer;
-        color: #a40404;
-        top: -5px;
-        right: 10px;
-        font-size: 1.5rem;
         z-index: 10;
         /* Asegúrate de que esté por encima del contenido */
     }
