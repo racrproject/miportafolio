@@ -127,10 +127,9 @@ nav {
         font-size: 2rem;
         cursor: pointer;
         color: #a40404;
-        top: -5px;
+        top: 5px;
         right: 10px;
         font-size: 1.5rem;
-        z-index: 10;
         /* Asegúrate de que esté por encima del contenido */
     }
 
@@ -700,9 +699,11 @@ strong {
     }
 
     .close-btn {
+        position: absolute;
         top: 5px;
         right: 10px;
         font-size: 1.5rem;
+        z-index: 10;
     }
 
     .modal-content iframe {
