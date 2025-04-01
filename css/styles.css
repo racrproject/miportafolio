@@ -126,7 +126,7 @@ nav {
         display: none;
         position: absolute;
         font-size: 2rem;
-        color: #bd0d0d;
+        color: transparent;
         cursor: pointer;
         top: 10px;
         right: 5px;
