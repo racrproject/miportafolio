@@ -81,7 +81,7 @@ nav {
 }
 
 /* Responsive para móvil */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .hamburguesa {
         display: flex;
         flex-direction: column;
@@ -264,7 +264,7 @@ header {
     /* Efecto de agrandar ligeramente al pasar el mouse */
 }
 
-@media (max-width:768px) {
+@media (max-width:480px) {
     .logo {
         float: left;
     }
@@ -310,7 +310,7 @@ header {
     transform: scale(1.2);
 }
 
-@media (max-width: 780px) {
+@media (max-width: 480px) {
     header {
         height: 100vv;
         padding-bottom: 80px;
@@ -643,7 +643,7 @@ strong {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .content {
         margin: auto;
         padding: auto;
@@ -880,7 +880,7 @@ strong {
     color: var(--color-font);
 }
 
-@media (max-width: 768px) {
+@media (max-width:480px) {
     .projects-grid {
         padding: 6% 15%;
         display: grid;
@@ -1006,7 +1006,7 @@ img {
     max-width: 100px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .blog-posts {
         max-width: 100%;
         margin: 3rem auto;
@@ -1125,7 +1125,7 @@ footer {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .contact-form {
         padding: 2rem 1rem;
         max-width: 90%;
@@ -1138,7 +1138,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .nav-container {
         flex-direction: column;
         gap: 1rem;
