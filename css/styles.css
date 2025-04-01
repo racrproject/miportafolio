@@ -319,6 +319,7 @@ header {
 @media (max-width: 780px) {
     header {
         height: 100vv;
+        width: 90%;
         padding-bottom: 80px;
     }
 
