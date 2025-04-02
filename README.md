@@ -1,6 +1,6 @@
 # Portafolio Personal 🚀
 
-Bienvenido/a a mi portafolio personal, donde muestro proyectos, habilidades y recursos diseñados para compartir mi experiencia en desarrollo web y diseño. Este portafolio incluye tanto código como recursos visuales.
+Bienvenido/a a mi portafolio personal, donde muestro proyectos, habilidades y recursos diseñados para compartir mi experiencia en seguridad de la información, seguridad informática, administración de sistemas, desarrollo web y diseño. Este portafolio incluye tanto código como recursos visuales.
 
 ---
 
