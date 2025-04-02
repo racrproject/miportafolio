@@ -30,7 +30,7 @@ Si estás interesado/a en utilizar algún recurso, por favor, **contáctame dire
 
 Si tienes alguna consulta o deseas ponerte en contacto para colaborar, puedes escribirme a (o directamente ir al portafolio y colocar la seccion de "contacto"): 
 - **Email:** rominaalleycastro@gmail.com
-- **Portafolio en línea:** [Link a tu sitio](https://racrproject.github.io/miportafolio/)
+- **Portafolio en línea:** [Link](https://racrproject.github.io/miportafolio/)
 
 ---
 
