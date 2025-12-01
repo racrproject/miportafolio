@@ -6,5 +6,16 @@
         "link": "/miportafolio/files/blogs-html/ciberseguridad/permisos-linux.html",
         "date": "Marzo 19, 2025",
         "image": "/miportafolio/images/blogs/portadas/p1.png"
+    },
+
+    {
+        "title": "Simulación de Ransomware",
+        "description": "Laboratorio: observa el comportamiento básico de un ransomware.",
+        "tags": ["simulacion", "ransomware", "servidor", "exfiltracion", "cifrado", "rescate"],
+        "link": "/miportafolio/files/blogs-html/ciberseguridad/simulacion-ransomware.html",
+        "date": "Julio 22, 2025",
+        "image": "/miportafolio/images/blogs/portadas/p1.png"
     }
 ]
+
+

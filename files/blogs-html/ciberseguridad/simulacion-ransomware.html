@@ -1,0 +1,391 @@
+<!DOCTYPE>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio: Cómo actúa un Ransomware </title>
+    <link rel="icon" type="image/x-icon" href="/miportafolio/images/logo.ico">
+    <link rel="stylesheet" href="/miportafolio/css/normalize.css" />
+    <link rel="stylesheet" href="/miportafolio/css/blog.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/miportafolio/">RomiFolio</a>
+            </div>
+            <div class="hamburguesa">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <span class="close-menu">&times;</span>
+                <a href="/miportafolio/pages/about.html">Sobre mi</a>
+                <a href="/miportafolio/pages/projects.html">Proyectos</a>
+                <a href="/miportafolio/pages/blog.html">Blogs</a>
+                <a href="/miportafolio/pages/contact.html">Contacto</a>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="background">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Laboratorio: Conociendo el comportamiento de un ransomware</h1>
+                    <p>Guía práctica</p>
+                </div>
+                <div class="btn">
+                    <a href="/miportafolio/pages/blog.html">Regresar</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="main-container">
+            <div class="content">
+                <div class="icons">
+                    <div class="icon">
+                        <a href="https://github.com/racrproject">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                                class="bi bi-github" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                            </svg>
+                        </a>
+
+                    </div>
+                    <div class="icon">
+                        <a href="https://linkedin.com/in/romina-castro-rodr%C3%ADguez">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                                class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </div>
+                <section class="section">
+
+                    <h2 class="section-title">Tabla de Contenido</h2>
+                    <ul>
+                        <li> <a href="#intro">Introducción</a> </li>
+                        <li> <a href="#basic-concepts">Conceptos básicos</a> </li>
+                        <li> <a href="#esential-commands">Preparación del laboratorio</a> </li>
+                        <li> <a href="#script">Ejecución del script</a> </li>
+                        <li> <a href="#aprendizaje">Lo aprendido</a> </li>
+                        <li> <a href="#conclution">Conclusiones</a> </li>
+                        <li> <a href="#reference">Referencias</a> </li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title" id="intro">Introducción</h2>
+                    <div class="info">
+                        <p>Siempre quise entender a fondo cómo actúa un ransomware desde adentro, no solo leer sobre él
+                            o analizar sus efectos, sino realmente verlo en acción (en un entorno controlado, claro
+                            está). Así que decidí crear mi propia simulación. Con un poquito de PowerShell,
+                            algunas ideas en mente y muchas ganas de aprender, me armé un mini laboratorio para ver con
+                            mis propios ojos cómo un ransomware puede cifrar archivos y generar caos... aunque en este
+                            caso, todo fue bajo mi control.<br>
+
+                            Ahora, por supuesto, este experimento no busca replicar el impacto ni la complejidad de
+                            amenazas como WannaCry, Quilin, Ares Locker u otros ransomware utilizados por grupos APT,
+                            eso ya es otro nivel, y también otro tema del que me encantaría hablar en próximas
+                            publicaciones. De hecho, creo que investigar estos grupos, sus técnicas y su evolución puede
+                            ser súper valioso para quienes estamos creciendo en este mundo de la ciberseguridad… y es
+                            justamente desde la curiosidad y el aprendizaje constante que poco a poco nos vamos formando
+                            como profesionales con más experiencia.
+
+                            En este blog te voy a contar cómo fue mi primera simulación de ransomware: cómo preparé el
+                            entorno, qué hizo exactamente el script desarrolado, cómo reaccionó la máquina víctima y,
+                            sobre todo, qué aprendí de todo esto. Porque una cosa es saber qué hace un ransomware, y
+                            otra muy distinta es vivirlo paso a paso —aunque sea en tu lab. <br>
+                            Si estás en el mundo de la ciberseguridad o simplemente quieres aprender más de estas
+                            amenazas, quédate, que lo que se viene es puro fuego técnico y experiencia real 💻🔥
+                        </p>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title" id="basic-concepts">Conceptos básicos</h2>
+                    <div class="info">
+                        <div>
+                            <h3>Ransomware... ¿Qué es?</h3>
+                            <p>Una vez, estaba conversando con un amigo sobre nuestras carreras profesionales, y yo le
+                                comentaba que en mi carrera se conocía el término Ransomware.
+                                Mi amigo dijo "y quein es? suena a una persona mala", no les negaré que me reí por eso,
+                                mi amigo pensaba que era el apellido
+                                una persona, malo era pero no una persona JAJA,, entonces le expliqué de qué se trataba,
+                                y menos le gustó.<br>
+
+                                Un ransomware es un...... en proceso
+                            </p>
+
+
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title" id="esential-commands">Preparación del laboratorio</h2>
+                    <div class="img-explain">
+                        <img src="/miportafolio/images/projects/ds2.png" alt="ds2">
+                    </div>
+                    <div class="info">
+                        <div>
+
+                            <p>Para esta simulación utilicé un entorno controlado que me permitiera ejecutar el script
+                                sin comprometer equipos reales ni afectar redes productivas. La idea era recrear el
+                                impacto visible que podría generar un ransomware básico: cifrado de archivos,
+                                eliminación de datos y entrega de una nota de rescate, todo esto dentro de una carpeta
+                                específica generada por el propio script.
+                                Este tipo de pruebas son muy útiles cuando se quiere evaluar cómo reaccionaría un
+                                sistema o infraestructura ante un ataque sin utilizar malware real ni causar daño
+                                real.<br>
+
+                                El entorno consistía en máquinas virtuales Windows, configuradas de forma aislada. En
+                                este caso, utilicé PowerShell como medio de ejecución remota, aunque también puede
+                                emplearse herramientas como Evil-WinRM para pruebas más específicas desde un host
+                                atacante. La máquina de prueba fue configurada con los permisos necesarios para permitir
+                                la ejecución del script sin restricciones, simulando un escenario donde el atacante ya
+                                ha obtenido cierto nivel de acceso al sistema.<br>
+
+                                Esta prueba, más allá de ser un experimento técnico, también sirvió como ejercicio de
+                                validación para detectar qué medidas de defensa existen (o faltan) ante un ataque que
+                                busca cifrar archivos críticos rápidamente. Y aunque no se utilizó un malware real, el
+                                comportamiento simulado fue suficiente para generar los mismos efectos visibles que
+                                tendría un ransomware simple en sus primeras fases.<br>
+                            </p>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h2 class="section-title" id="script">Ejecución del Script y comportamiento</h2>
+                        <h3>🔍 Desglose del script simulado de ransomware</h3>
+
+                        <p>Este es el script que utilicé para simular el comportamiento básico de un ransomware. Aquí
+                            explico cada parte del código:</p>
+
+                        <h4>1. Crear carpeta de simulación</h4>
+                        <p>Se crea una carpeta donde se almacenarán todos los archivos simulados. Se fuerza la creación
+                            para que no haya error si ya existe.</p>
+
+                        <h4>2. Archivos simulados</h4>
+                        <p>Se generan archivos de distintos tipos (Word, XML, CSV, scripts, etc.) simulando archivos
+                            importantes o sensibles dentro del entorno objetivo.</p>
+
+                        <h4>3. Simular cifrado (renombrar archivos)</h4>
+                        <p>Aquí se renombra cada archivo dentro de la carpeta agregando la extensión
+                            <code>.locked</code>, lo cual simula el comportamiento clásico del ransomware al cifrar
+                            archivos.
+                        </p>
+
+                        <h4>4. Nota de rescate</h4>
+                        <p>Se crea una nota de rescate en texto plano dentro de la carpeta, imitando los mensajes que
+                            dejan los ransomware reales.</p>
+
+                        <h4>5. Variables para compresión del archivo</h4>
+                        <p>Estas variables definen el nombre dinámico del archivo comprimido, usando la fecha y el
+                            nombre del equipo.</p>
+
+                        <h4>6. Comprimir los archivos (con WinRAR si está disponible)</h4>
+                        <p>Si WinRAR está instalado, se genera un archivo <code>.rar</code> con contraseña, simulando el
+                            cifrado y empaquetamiento de archivos para su exfiltración.</p>
+
+                        <blockquote>
+                            Este script no realiza cifrado real, pero simula el impacto visible de un ransomware: los
+                            archivos "cifrados", el mensaje de rescate y la compresión de los datos para dificultar la
+                            recuperación.
+                        </blockquote>
+
+                        <img src="/miportafolio/images/blogs/blog2/script.png">
+
+                        <h3>📜 Script completo</h3>
+                        <pre><code class="language-powershell">
+                            # Crear carpeta de simulación
+                            $destino = "$env:USERPROFILE\Documents\Simulador_Ransomware"
+                            New-Item -ItemType Directory -Path $destino -Force | Out-Null
+                            
+                            # Archivos simulados
+                            "Este es un archivo simulado RTF." | Out-File "$destino\reporte1.docx"
+                            "Simulación de tráfico bloqueado" | Out-File "$destino\firewall_config.xml"
+                            "Configuración de sistemas" | Out-File "$destino\sistemas.conf"
+                            "Base de datos falsa" | Out-File "$destino\usuarios_posibles.csv"
+                            "Automatización" | Out-File "$destino\automatizacion.ps1"
+                            
+                            # Simular cifrado (renombrar archivos)
+                            Get-ChildItem $destino | ForEach-Object {
+                            Rename-Item $_.FullName ($_.FullName + ".locked")
+                            }
+                            
+                            # Nota de rescate
+                            $nota = "$destino\LEEME_RECUPERACION.txt"
+                            "Sus archivos han sido cifrados. Esta es una simulación autorizada. No se ha producido ningún daño real.
+                            contact@malicioso.com" | Out-File $nota
+                            
+                            # Variables para compresión
+                            $fecha = Get-Date -Format "yyyy-MM-dd"
+                            $hostname = $env:COMPUTERNAME
+                            $rarPath = "$destino\${hostname}_ransomware_${fecha}.rar"
+                            $winRarPath = "C:\Program Files\WinRAR\WinRAR.exe"
+                            
+                            # Comprimir con contraseña si existe WinRAR, sino ZIP simple
+                            if (Test-Path $winRarPath) {
+                            $comando = "$winRarPath a -ep1 -hp:simulacion123 `"$rarPath`" `"$destino\*`""
+                            cmd /c $comando
+                            Write-Host "Archivo RAR con contraseña generado: $rarPath" -ForegroundColor Cyan
+                            }
+                        </code></pre>
+
+
+                        <h3>¿Qué pasó realmente?</h3>
+                        <p>Una vez listo el entorno y preparado el script, ejecuté la simulación. El comportamiento fue
+                            directo pero efectivo: el script creó una carpeta, generó varios archivos que imitaban ser
+                            datos reales (documentos, configuraciones, bases de datos falsas…), y luego aplicó un
+                            “cifrado simulado” cambiando la extensión de cada uno a <kbd>.locked</kbd>. <br>
+
+                            Acto seguido, se generó una nota de rescate dentro de la misma carpeta, replicando lo que un
+                            ransomware real haría para intimidar al usuario. Finalmente, si la herramienta WinRAR estaba
+                            instalada en el sistema, el script comprimía todos los archivos con contraseña en un archivo
+                            .rar, simulando así la exfiltración de datos o su retención por parte del atacante. En caso
+                            de que WinRAR no estuviera presente, simplemente se omitía esa parte sin generar error.<br>
+
+                            Todo esto sucedía de forma rápida, sin levantar sospechas visuales inmediatas, justo como
+                            pasa en los primeros minutos de un ataque real si no hay detección temprana.<br>
+
+
+                        </p>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title" id="aprendizaje">Lo aprendido</h2>
+                    <div class="info">
+                        <div>
+                            <p>Esta experiencia me ayudó muchísimo a entender algo que muchas veces se queda solo en
+                                teoría: lo rápido que un ransomware puede causar impacto, incluso con acciones simples
+                                como renombrar archivos y
+                                borrar datos. Al construir este script y ejecutarlo en un entorno controlado, pude ver
+                                con claridad qué tipo de
+                                daño se puede provocar sin necesidad de usar malware real. <br>
+
+                                También confirmé la importancia de tener visibilidad en los sistemas, de contar con
+                                respaldos actualizados y de
+                                limitar el alcance de los usuarios en las máquinas. Aunque esta simulación no fue
+                                detectada por un SIEM en mi
+                                entorno de pruebas, dejó en evidencia lo silencioso que puede ser un ataque si no hay
+                                buenas configuraciones de
+                                monitoreo o respuesta. <br>
+
+                                Lo más importante fue reafirmar que aprender haciendo es clave en ciberseguridad. Y que
+                                no hace falta esperar a
+                                enfrentarse a un incidente real para empezar a entender cómo actúan las amenazas:
+                                podemos simular, construir
+                                entornos seguros y experimentar por nuestra cuenta para fortalecer nuestras habilidades.
+                                <br>
+
+                                Esta simulación despertó aún más mi interés por estudiar cómo operan los grupos APT y
+                                qué técnicas utilizan para
+                                distribuir ransomware real en campañas más avanzadas. Ese será un tema para futuros
+                                blogs, donde compartiré
+                                investigaciones, casos reales y análisis técnicos más profundos. Por ahora, este primer
+                                ejercicio fue solo el
+                                comienzo... y vaya que valió la pena.
+                            </p>
+
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title" id="conclusiones">Conclusiones</h2>
+                    <div class="info">
+                        <div>
+                            <p>Simular un ataque de ransomware, incluso de forma básica, puede convertirse en una
+                                experiencia sumamente enriquecedora para cualquier persona que esté dando sus primeros
+                                pasos (o profundizando) en el mundo de la ciberseguridad. No se trata de convertirse en
+                                un atacante, sino de entender cómo piensan, cómo actúan y, sobre todo, cómo defendernos
+                                mejor. <br>
+
+                                Esta simulación fue una oportunidad para poner a prueba mis conocimientos, cuestionar
+                                qué tan preparada está una infraestructura ante un ataque, y abrir puertas hacia futuras
+                                investigaciones más profundas.<br>
+
+                                🧠💻 Si estás en este camino, te animo a que crees tu propio laboratorio, experimentes
+                                con scripts seguros y sigas fortaleciendo tu habilidad de análisis técnico. Cada línea
+                                de código, cada hipótesis que pruebas, te acerca más a convertirte en un profesional con
+                                criterio y visión.<br>
+
+                                📌 ¿Te animarías a crear tu propia simulación de ransomware?
+                                Escríbeme por redes, me encantaría saber cómo te fue,
+                                compartir ideas y seguir aprendiendo juntos.
+                            </p>
+
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="section">
+                    <div class="line"></div>
+                    <div class="info">
+                        <p>Agradezco mucho la vista a este espacio, espero que la información te haya sido de ayuda
+                            y la encuentres favorable para tu propio aprendizaje. Sientete libre de intercambiar
+                            información a mi correo electrónico para poder charlar sobre más estrategias para asegurars
+                            los equipos de la empresa. <br>¡Muchas gracias, espero verte nuevamente!
+                        </p>
+                    </div>
+                    <div class="line"></div>
+                    <br>
+                </section>
+                <div class="btn-ctr">
+                    <a href="/miportafolio/pages/blog.html">Regresar</a>
+                </div>
+                <div class="fecha-mod">
+
+                    <p>Última modificación: 22-07-2025</p>
+                </div>
+
+    </main>
+
+    <footer>
+        <div class="contain-footer">
+            <div class="social-links">
+                <a href="/miportafolio/pages/contact.html">
+                    <img src="/miportafolio/images/icons/email.png" alt="_blank">
+                </a>
+                <a href="https://linkedin.com/in/romina-castro-rodríguez" target="_blank">
+                    <img src="/miportafolio/images/icons/linkedin.png" alt="_blank">
+                </a>
+                <a href="https://github.com/racrproject" target="_blank">
+                    <img src="/miportafolio/images/icons/github.png" alt="_blank">
+                </a>
+            </div>
+           
+            <p>© 2025 Romina Castro. Todos los derechos reservados.</p>
+
+        </div>
+
+
+    </footer>
+    <script src="/miportafolio/js/general.js"></script>
+    <script src="/miportafolio/js/projects.js"></script>
+
+</body>
+
+</html>
